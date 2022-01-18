@@ -1,0 +1,59 @@
+package com.shop.vo;
+
+public class MemVO {
+	private int seq;
+	private String userid;
+	private String pw;
+	private String email;
+	private String question;
+	private String answer;
+	private String regdate;
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
+	}
+	public String getUserid() {
+		return userid;
+	}
+	public void setUserid(String userid) {
+		this.userid = userid;
+	}
+	public String getPw() {
+		return pw;
+	}
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getQuestion() {
+		return question;
+	}
+	public void setQuestion(String question) {
+		this.question = question;
+	}
+	public String getAnswer() {
+		return answer;
+	}
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
+	public String getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(String regdate) {
+		this.regdate = regdate;
+	}
+	@Override
+	public String toString() {
+		return "MemVO [seq=" + seq + ", userid=" + userid + ", pw=" + pw + ", email=" + email + ", question=" + question
+				+ ", answer=" + answer + ", regdate=" + regdate + "]";
+	}
+	
+}		

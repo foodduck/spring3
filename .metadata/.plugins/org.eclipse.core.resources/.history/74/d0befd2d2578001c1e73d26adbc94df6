@@ -1,0 +1,14 @@
+package com.shop.vo;
+
+import java.util.Date;
+
+public class CouponVO {
+	private int seq;
+	private int holder;
+	private String couponId;
+	private String couponName;
+	private String dcRate;
+	private String validate;
+	private Date useDate;
+	private Date expiryDate;
+}
