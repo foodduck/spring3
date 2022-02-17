@@ -1,0 +1,43 @@
+create table board(
+	seq int not null auto_increment,
+	title varchar(500) not null,
+	content varchar(1000) not null,
+	writer varchar(100) not null,
+	category varchar(100) not null,
+	regdate timestamp default now() not null,
+	primary key(seq)) engine=myisam charset="utf8";
+    
+create table mem(
+	seq int not null auto_increment,
+    userid varchar(100) not null, 
+    pw varchar(500) not null, 
+    email varchar(500) not null, 
+    question varchar(500) not null,
+    answer varchar(500) not null,
+    regdate timestamp default now() not null,
+    primary key(seq), unique(userid)) engine=myisam charset="utf8";
+    
+create table product(
+	seq int not null auto_increment,
+    proid varchar(100) not null,
+    proname varchar(500) not null,
+    price int not null, 
+    cnt int not null default 0,
+    img varchar(500),
+    regdate timestamp default now() not null,
+    primary key(seq), unique(proid)) engine=myisam charset="utf8";
+    
+create table coupon(
+	seq int not null auto_increment,
+    holder int not null,	
+    couponid varchar(100) not null,
+    couponname varchar(500) not null,
+    dcrate decimal default 1,
+    validate varchar(10) default "unused",
+    usedate date,
+    expirydate date default "2099-01-01",
+    img varchar(500),
+    primary key(seq), unique(couponid)) engine=myisam charset="utf8";
+    
+#쿠폰 테이블의 holder에 회원 테이블의 seq를 외래키로 추가
+alter table coupon add constraint foreign_holder foreign key(holder) references mem(seq)
